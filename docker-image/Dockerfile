@@ -14,7 +14,7 @@ USER root
 
 # Install build tools
 RUN apt-get -qq update && \
-    apt-get install -y -qq curl ca-certificates build-essential cmake make bash sudo wget unzip && \
+    apt-get install -y -qq curl ca-certificates build-essential cmake make bash sudo wget unzip nano vi valgrind && \
     apt-get install -y -qq --reinstall lsb-base lsb-release && \
     wget -O "/tmp/fluent-bit-$FLB_VERSION-dev.zip" "http://github.com/fluent/fluent-bit/archive/master.zip" && \
     cd /tmp && \
