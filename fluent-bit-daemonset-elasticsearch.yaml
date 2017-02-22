@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fluent-bit
-        image: quay.io/fluent/fluent-bit-kubernetes-daemonset
+        image: quay.io/edsiper/fluent-bit-daemonset-test
         env:
           - name:  FLUENT_ELASTICSEARCH_HOST
             value: "elasticsearch-logging"
