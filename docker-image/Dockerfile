@@ -23,8 +23,7 @@ RUN apt-get -qq update && \
     cmake -DFLB_DEBUG=On -DFLB_TRACE=On \
           -DCMAKE_INSTALL_PREFIX=/fluent-bit/ -DFLB_JEMALLOC=On ../&& \
     make && make install && \
-    rm -rf /tmp/* /fluent-bit/include /fluent-bit/lib* && \
-    apt-get remove -y -qq cmake make wget unzip
+    rm -rf /tmp/* /fluent-bit/include /fluent-bit/lib*
 
 COPY fluent-bit.conf /fluent-bit/etc/
 COPY parsers.conf /fluent-bit/etc/
