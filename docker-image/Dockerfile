@@ -5,19 +5,16 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV FLB_MAJOR 0
 ENV FLB_MINOR 11
 ENV FLB_PATCH 0
+ENV FLB_KUBE  2
 ENV FLB_VERSION 0.11.0
-
 
 MAINTAINER Eduardo Silva <eduardo@treasure-data.com>
 LABEL Description="Fluent Bit docker image" Vendor="Fluent Organization" Version="1.1"
 USER root
 
-ADD .git/HEAD /app/CACHE_BUSTER
-RUN rm CACHE_BUSTER
-
 # Install build tools
 RUN apt-get -qq update && \
-    apt-get install -y -qq curl ca-certificates build-essential cmake make bash sudo wget unzip nano vim valgrind && \
+    apt-get install -y -qq curl ca-certificates build-essential cmake make bash sudo wget unzip nano vim valgrind  && \
     apt-get install -y -qq --reinstall lsb-base lsb-release && \
     wget -O "/tmp/fluent-bit-$FLB_VERSION-dev.zip" "http://github.com/fluent/fluent-bit/archive/master.zip" && \
     cd /tmp && \
