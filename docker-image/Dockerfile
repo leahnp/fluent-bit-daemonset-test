@@ -12,6 +12,9 @@ MAINTAINER Eduardo Silva <eduardo@treasure-data.com>
 LABEL Description="Fluent Bit docker image" Vendor="Fluent Organization" Version="1.1"
 USER root
 
+ADD .git/HEAD /app/CACHE_BUSTER
+RUN rm CACHE_BUSTER
+
 # Install build tools
 RUN apt-get -qq update && \
     apt-get install -y -qq curl ca-certificates build-essential cmake make bash sudo wget unzip nano vim valgrind && \
