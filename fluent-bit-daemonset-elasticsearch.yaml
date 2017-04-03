@@ -2,8 +2,8 @@ apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
   name: fluent-bit
-  namespace: kube-system
   labels:
+    app: log-app
     k8s-app: fluent-bit-logging
     version: v1
     kubernetes.io/cluster-service: "true"
@@ -17,15 +17,13 @@ spec:
     spec:
       containers:
       - name: fluent-bit
-        image: edsiper/fluent-bit-daemonset-test
+        image: leahnp/fbds-test
         env:
           - name:  FLUENT_ELASTICSEARCH_HOST
             value: "elasticsearch"
           - name:  FLUENT_ELASTICSEARCH_PORT
             value: "9200"
         resources:
-          limits:
-            memory: 100Mi
           requests:
             cpu: 100m
             memory: 100Mi
