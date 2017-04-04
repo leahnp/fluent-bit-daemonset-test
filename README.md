@@ -12,4 +12,4 @@ To deploy in a Kubernetes cluster:
 
 ## History
 
-Previously we used FluentD as a log collector and are experimenting with this light-weight Fluent-Bit option. More details on our epxerience to come. 
+Previously we used FluentD as a log collector and are experimenting with this light-weight Fluent-Bit option. More details on our experience to come. 
