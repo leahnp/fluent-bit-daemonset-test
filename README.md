@@ -1,6 +1,6 @@
 # Fluent-Bit Daemonset for Kubernetes
 
-Run [Fluent-Bit](http://fluentbit.io/) to collect logs and output them to elasticsearch in a Kubernetes cluster. Fluent-Bit is configured in this example to tail all containers (excluding Fluent-Bit containers) and collect STDERR/STDOUT logs made available at /var/log/containers/*.log by Docker.
+Run [Fluent-Bit](http://fluentbit.io/) as a daemonset to collect logs and output them to elasticsearch in a Kubernetes cluster. Fluent-Bit is configured in this example to tail all containers (excluding Fluent-Bit containers) and collect STDERR/STDOUT logs made available at /var/log/containers/*.log by Docker. It also includes a Kubernetes meta-data filter which appends information about the pod which produced the log. 
 
 ## Usage
 
